@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="topic_rel">Relaciones entre ángulos</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="wrap">
+<header class="topbar">
+  <a class="homelink" href="../index.html" data-i18n="home"></a>
+  <h1 data-i18n="topic_rel"></h1>
+  <button class="lang" id="langBtn"></button>
+</header>
+
+<nav class="subtabs">
+  <button data-tab="r-comp" class="on" data-i18n="rtab1"></button>
+  <button data-tab="r-point" data-i18n="rtab2"></button>
+  <button data-tab="r-vert" data-i18n="rtab3"></button>
+  <button data-tab="r-ex" data-i18n="ex_title"></button>
+</nav>
+
+<section id="r-comp" class="on">
+  <div class="card">
+    <h2 data-i18n="r1_title"></h2>
+    <p class="intro" data-i18n="r1_intro"></p>
+    <div class="row">
+      <div class="fig"><svg id="rsv1" class="board drag" viewBox="0 0 600 380"></svg></div>
+      <div class="side">
+        <div>
+          <button class="btn" data-rmode="90" data-i18n="r_m90"></button>
+          <button class="btn on" data-rmode="180" data-i18n="r_m180"></button>
+        </div>
+        <div class="eq" id="req1"></div>
+        <div class="badge" id="rName"></div>
+        <p class="tip" data-i18n="r1_tip"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="r-point">
+  <div class="card">
+    <h2 data-i18n="r2_title"></h2>
+    <p class="intro" data-i18n="r2_intro"></p>
+    <div class="row">
+      <div class="fig"><svg id="rsv2" class="board drag" viewBox="0 0 600 420"></svg></div>
+      <div class="side">
+        <div class="eq" id="req2" style="font-size:1.3rem"></div>
+        <p class="tip" data-i18n="r2_tip"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="r-vert">
+  <div class="card">
+    <h2 data-i18n="r3_title"></h2>
+    <p class="intro" data-i18n="r3_intro"></p>
+    <div class="row">
+      <div class="fig"><svg id="rsv3" class="board drag" viewBox="0 0 600 420"></svg></div>
+      <div class="side">
+        <div class="info" id="req3"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="r-ex"><div class="card" id="exRel"></div></section>
+<footer></footer>
+</div>
+<script src="../js/core.js"></script>
+<script src="relations.js"></script>
+</body>
+</html>

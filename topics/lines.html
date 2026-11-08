@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="topic_lines">Puntos, líneas y rayos</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="wrap">
+<header class="topbar">
+  <a class="homelink" href="../index.html" data-i18n="home"></a>
+  <h1 data-i18n="topic_lines"></h1>
+  <button class="lang" id="langBtn"></button>
+</header>
+
+<nav class="subtabs">
+  <button data-tab="l-basic" class="on" data-i18n="ltab1"></button>
+  <button data-tab="l-pair" data-i18n="ltab2"></button>
+  <button data-tab="l-ex" data-i18n="ex_title"></button>
+</nav>
+
+<section id="l-basic" class="on">
+  <div class="card">
+    <h2 data-i18n="l1_title"></h2>
+    <p class="intro" data-i18n="l1_intro"></p>
+    <div class="row">
+      <div class="fig"><svg id="lsv1" class="board drag" viewBox="0 0 600 400"></svg></div>
+      <div class="side">
+        <div>
+          <button class="btn on" data-lmode="seg" data-i18n="l_seg"></button>
+          <button class="btn" data-lmode="ray" data-i18n="l_ray"></button>
+          <button class="btn" data-lmode="line" data-i18n="l_line"></button>
+        </div>
+        <div class="badge" id="lBadge"></div>
+        <p class="tip" data-i18n="l_note"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="l-pair">
+  <div class="card">
+    <h2 data-i18n="l2_title"></h2>
+    <p class="intro" data-i18n="l2_intro"></p>
+    <div class="row">
+      <div class="fig"><svg id="lsv2" class="board drag" viewBox="0 0 600 420"></svg></div>
+      <div class="side">
+        <div class="badge" id="lBadge2"></div>
+        <div>
+          <button class="btn" data-lpreset="par" data-i18n="l_par"></button>
+          <button class="btn" data-lpreset="perp" data-i18n="l_perp"></button>
+          <button class="btn" data-lpreset="cross" data-i18n="l_cross"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="l-ex"><div class="card" id="exLines"></div></section>
+<footer></footer>
+</div>
+<script src="../js/core.js"></script>
+<script src="lines.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="topic_quad">Cuadriláteros</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="wrap">
+<header class="topbar">
+  <a class="homelink" href="../index.html" data-i18n="home"></a>
+  <h1 data-i18n="topic_quad"></h1>
+  <button class="lang" id="langBtn"></button>
+</header>
+
+<nav class="subtabs">
+  <button data-tab="q-sum" class="on" data-i18n="qtab1"></button>
+  <button data-tab="q-types" data-i18n="qtab2"></button>
+  <button data-tab="q-area" data-i18n="qtab3"></button>
+  <button data-tab="q-ex" data-i18n="ex_title"></button>
+</nav>
+
+<section id="q-sum" class="on">
+  <div class="card">
+    <h2 data-i18n="q1_title"></h2>
+    <p class="intro" data-i18n="q1_intro"></p>
+    <div class="row">
+      <div class="fig"><svg id="qsv1" class="board drag" viewBox="0 0 600 420"></svg></div>
+      <div class="side">
+        <svg id="circ" viewBox="0 0 320 235"></svg>
+        <div class="eq" id="qeq1" style="font-size:1.3rem"></div>
+        <p class="tip" data-i18n="q1_diag"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="q-types">
+  <div class="card">
+    <h2 data-i18n="q2_title"></h2>
+    <p class="intro" data-i18n="q2_intro"></p>
+    <div class="row">
+      <div class="fig"><svg id="qsv2" class="board drag" viewBox="0 0 600 420"></svg></div>
+      <div class="side">
+        <div class="badge" id="qBadge"></div>
+        <ul class="props" id="qProps"></ul>
+        <div>
+          <button class="btn" data-qpreset="square" data-i18n="q_square"></button>
+          <button class="btn" data-qpreset="rect" data-i18n="q_rect"></button>
+          <button class="btn" data-qpreset="rhombus" data-i18n="q_rhombus"></button>
+          <button class="btn" data-qpreset="para" data-i18n="q_para"></button>
+          <button class="btn" data-qpreset="trap" data-i18n="q_trap"></button>
+          <button class="btn" data-qpreset="kite" data-i18n="q_kite"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="q-area">
+  <div class="card">
+    <h2 data-i18n="q3_title"></h2>
+    <p class="intro" data-i18n="q3_intro"></p>
+    <div class="row">
+      <div class="fig"><svg id="qsv3" class="board drag" viewBox="0 0 600 400"></svg></div>
+      <div class="side">
+        <div class="eq" id="qeq3" style="font-size:1.3rem"></div>
+        <p class="tip" data-i18n="q3_tip"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="q-ex"><div class="card" id="exQuad"></div></section>
+<footer></footer>
+</div>
+<script src="../js/core.js"></script>
+<script src="quads.js"></script>
+</body>
+</html>

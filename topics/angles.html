@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="topic_angles">Ángulos</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="wrap">
+<header class="topbar">
+  <a class="homelink" href="../index.html" data-i18n="home"></a>
+  <h1 data-i18n="topic_angles"></h1>
+  <button class="lang" id="langBtn"></button>
+</header>
+
+<nav class="subtabs">
+  <button data-tab="a-what" class="on" data-i18n="atab1"></button>
+  <button data-tab="a-prot" data-i18n="atab2"></button>
+  <button data-tab="a-ex" data-i18n="ex_title"></button>
+</nav>
+
+<section id="a-what" class="on">
+  <div class="card">
+    <h2 data-i18n="a1_title"></h2>
+    <p class="intro" data-i18n="a1_intro"></p>
+    <div class="row">
+      <div class="fig"><svg id="asv1" class="board drag" viewBox="0 0 600 420"></svg></div>
+      <div class="side">
+        <div class="badge" id="aBadge"></div>
+        <ul class="scale" id="aScale"></ul>
+        <p class="tip" data-i18n="a1_try"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="a-prot">
+  <div class="card">
+    <h2 data-i18n="a2_title"></h2>
+    <p class="intro" data-i18n="a2_intro"></p>
+    <div class="row">
+      <div class="fig"><svg id="asv2" class="board drag" viewBox="0 0 600 340"></svg></div>
+      <div class="side">
+        <div class="big" id="pVal"></div>
+        <div>
+          <button class="btn" id="pShowBtn"></button>
+          <button class="btn" id="pRnd" data-i18n="a_random"></button>
+        </div>
+        <p class="tip" data-i18n="a2_tip"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="a-ex"><div class="card" id="exAngles"></div></section>
+<footer></footer>
+</div>
+<script src="../js/core.js"></script>
+<script src="angles.js"></script>
+</body>
+</html>

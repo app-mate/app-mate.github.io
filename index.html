@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="title">Laboratorio de Geometría</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+<header class="topbar">
+  <h1 data-i18n="title"></h1>
+  <button class="lang" id="langBtn"></button>
+</header>
+<p class="hero" data-i18n="home_intro"></p>
+<div id="course"></div>
+<footer></footer>
+</div>
+<script src="js/core.js"></script>
+<script>
+/* =====================================================================
+   HOME PAGE: the course map.
+   To publish a new topic: give its entry an `href` (the page in topics/).
+   To add a topic to the plan: add an entry + its words below.
+   ===================================================================== */
+const COURSE=[
+ {level:'lvl1',items:[
+  {k:'c1',href:'topics/lines.html'},
+  {k:'c2',href:'topics/angles.html'},
+  {k:'c3',href:'topics/relations.html'},
+  {k:'c4',href:'topics/parallels.html'},
+  {k:'c5',href:'topics/triangles.html'},
+  {k:'c6',href:'topics/quads.html'},
+  {k:'c7'},{k:'c8'},{k:'c9'},{k:'c10'},{k:'c11'},{k:'c12'}]},
+ {level:'lvl2',items:[{k:'d1'},{k:'d2'},{k:'d3'},{k:'d4'},{k:'d5'},{k:'d6'}]},
+ {level:'lvl3',items:[{k:'e1'},{k:'e2'},{k:'e3'},{k:'e4'}]}
+];
+
+addStrings({
+es:{
+ home_intro:"Un curso interactivo de geometría: mueve las figuras, descubre las reglas y practica con ejercicios que cambian cada vez.",
+ lvl1:"Nivel 1 · 10–11 años",lvl2:"Nivel 2 · 12–14 años",lvl3:"Nivel 3 · 14 años en adelante",
+ open:"Abrir →",soon:"Próximamente",
+ c1:"Puntos, líneas y rayos",c1_d:"Segmentos, rectas paralelas y perpendiculares",
+ c2:"Ángulos",c2_d:"Qué es un ángulo, cómo medirlo y sus tipos",
+ c3:"Relaciones entre ángulos",c3_d:"Línea recta (180°), alrededor de un punto (360°), opuestos por el vértice",
+ c4:"Paralelas y una secante",c4_d:"Ángulos en forma de F y de Z",
+ c5:"Triángulos",c5_d:"Suma 180°, lados y ángulos, tipos y área",
+ c6:"Cuadriláteros",c6_d:"Suma 360°, tipos y área",
+ c7:"Polígonos",c7_d:"Nombres y suma de ángulos: (n − 2) × 180°",
+ c8:"Perímetro y área",c8_d:"Rectángulos, triángulos y figuras compuestas",
+ c9:"Círculos",c9_d:"Radio, diámetro y el descubrimiento de π",
+ c10:"Simetría y transformaciones",c10_d:"Reflejo, giro, traslación y teselados",
+ c11:"Cuerpos 3D",c11_d:"Caras, aristas, vértices, desarrollos y volumen",
+ c12:"Coordenadas",c12_d:"Ubicar puntos en una cuadrícula",
+ d1:"Triángulos semejantes y escalas",d1_d:"Medir la altura de un árbol con su sombra",
+ d2:"Teorema de Pitágoras",d2_d:"Los cuadrados sobre los lados de un triángulo rectángulo",
+ d3:"Área del círculo",d3_d:"π × radio × radio",
+ d4:"Volumen de prismas y cilindros",d4_d:"Área de la base × altura",
+ d5:"Construcciones",d5_d:"Con regla y compás",
+ d6:"Coordenadas en 4 cuadrantes",d6_d:"Números negativos, pendiente y distancia",
+ e1:"Seno, coseno y tangente",e1_d:"Razones en el triángulo rectángulo",
+ e2:"Círculo unitario",e2_d:"Ángulos más allá de 90°",
+ e3:"Vectores",e3_d:"Flechas con dirección y tamaño",
+ e4:"Demostraciones",e4_d:"Por qué las reglas siempre se cumplen"
+},
+en:{
+ home_intro:"An interactive geometry course: move the shapes, discover the rules, and practice with exercises that change every time.",
+ lvl1:"Level 1 · ages 10–11",lvl2:"Level 2 · ages 12–14",lvl3:"Level 3 · ages 14 and up",
+ open:"Open →",soon:"Coming soon",
+ c1:"Points, lines and rays",c1_d:"Segments, parallel and perpendicular lines",
+ c2:"Angles",c2_d:"What an angle is, how to measure it, and its types",
+ c3:"Angle relationships",c3_d:"Straight line (180°), around a point (360°), vertically opposite",
+ c4:"Parallel lines and a transversal",c4_d:"F-shaped and Z-shaped angles",
+ c5:"Triangles",c5_d:"180° rule, sides and angles, types and area",
+ c6:"Quadrilaterals",c6_d:"360° rule, types and area",
+ c7:"Polygons",c7_d:"Names and angle sums: (n − 2) × 180°",
+ c8:"Perimeter and area",c8_d:"Rectangles, triangles and combined shapes",
+ c9:"Circles",c9_d:"Radius, diameter and discovering π",
+ c10:"Symmetry and transformations",c10_d:"Reflection, rotation, translation and tessellations",
+ c11:"3D shapes",c11_d:"Faces, edges, vertices, nets and volume",
+ c12:"Coordinates",c12_d:"Placing points on a grid",
+ d1:"Similar triangles and scale",d1_d:"Measuring a tree's height with its shadow",
+ d2:"Pythagoras' theorem",d2_d:"Squares on the sides of a right triangle",
+ d3:"Area of a circle",d3_d:"π × radius × radius",
+ d4:"Volume of prisms and cylinders",d4_d:"Base area × height",
+ d5:"Constructions",d5_d:"With ruler and compass",
+ d6:"Coordinates in 4 quadrants",d6_d:"Negative numbers, slope and distance",
+ e1:"Sine, cosine and tangent",e1_d:"Ratios in a right triangle",
+ e2:"Unit circle",e2_d:"Angles beyond 90°",
+ e3:"Vectors",e3_d:"Arrows with direction and size",
+ e4:"Proofs",e4_d:"Why the rules always hold"
+}});
+
+function renderCourse(){const box=$('#course');box.replaceChildren();let n=0;
+ COURSE.forEach(L=>{
+  const h=document.createElement('h2');h.className='level';h.textContent=t(L.level);box.appendChild(h);
+  const cards=document.createElement('div');cards.className='cards';box.appendChild(cards);
+  L.items.forEach(it=>{n++;
+   const c=document.createElement(it.href?'a':'div');c.className='tcard '+(it.href?'ready':'soon');if(it.href)c.href=it.href;
+   c.innerHTML=`<span class="n">${n}</span><span><b>${t(it.k)}</b><span class="d">${t(it.k+'_d')}</span><span class="tag">${t(it.href?'open':'soon')}</span></span>`;
+   cards.appendChild(c)})})}
+
+startPage({onLang:renderCourse});
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="topic_par">Paralelas y una secante</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="wrap">
+<header class="topbar">
+  <a class="homelink" href="../index.html" data-i18n="home"></a>
+  <h1 data-i18n="topic_par"></h1>
+  <button class="lang" id="langBtn"></button>
+</header>
+
+<nav class="subtabs">
+  <button data-tab="p-fzc" class="on" data-i18n="ptab1"></button>
+  <button data-tab="p-tri" data-i18n="ptab2"></button>
+  <button data-tab="p-ex" data-i18n="ex_title"></button>
+</nav>
+
+<section id="p-fzc" class="on">
+  <div class="card">
+    <h2 data-i18n="p1_title"></h2>
+    <p class="intro" data-i18n="p1_intro"></p>
+    <div class="row">
+      <div class="fig"><svg id="psv1" class="board drag" viewBox="0 0 600 420"></svg></div>
+      <div class="side">
+        <div>
+          <button class="btn on" data-pmode="p_corr" data-i18n="p_corr"></button>
+          <button class="btn" data-pmode="p_alt" data-i18n="p_alt"></button>
+          <button class="btn" data-pmode="p_coint" data-i18n="p_coint"></button>
+          <button class="btn" id="pOther" data-i18n="p_other"></button>
+        </div>
+        <div class="badge" id="pBadge"></div>
+        <p id="pStatus"></p>
+        <p class="tip" data-i18n="p_tilt"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="p-tri">
+  <div class="card">
+    <h2 data-i18n="p2_title"></h2>
+    <p class="intro" data-i18n="p2_intro"></p>
+    <div class="row">
+      <div class="fig"><svg id="psv2" class="board drag" viewBox="0 0 600 420"></svg></div>
+      <div class="side">
+        <div class="eq" id="peq2"></div>
+        <p class="tip" data-i18n="p2_tip"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="p-ex"><div class="card" id="exPar"></div></section>
+<footer></footer>
+</div>
+<script src="../js/core.js"></script>
+<script src="parallels.js"></script>
+</body>
+</html>
